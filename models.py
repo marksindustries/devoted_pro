@@ -6,7 +6,7 @@ from database import Base
 
 class Owner(Base):
     __tablename__ = "owner"
-    ownerId = Column(String,primary_key=True)
+    ownerId = Column(Integer,primary_key=True)
     ownerName = Column(String)
     ownerAddress = Column(String)
     ownerEmail = Column(String)
@@ -32,7 +32,7 @@ class MenuCard(Base):
 
 class Orders(Base):
     __tablename__ = "orders"
-    ownerId = Column(String,ForeignKey('owner.ownerId'))
+    ownerId = Column(Integer,ForeignKey('owner.ownerId'))
     orderNo = Column(String,primary_key=True,index=True)
     orderList = Column(String)
     customerSegmentation = Column(String)
